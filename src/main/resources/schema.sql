@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS CAR;
+CREATE TABLE CAR
+(
+    id             INT PRIMARY KEY,
+    seats          INT NOT NULL,
+    availableSeats INT DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS JOURNEY;
+CREATE TABLE JOURNEY
+(
+    id      INT AUTO_INCREMENT PRIMARY KEY,
+    peopleId INT  NOT NULL,
+    numberOfPeople INT NOT NULL,
+    carId INT NOT NULL ,
+    status VARCHAR(255) NOT NULL,
+    FOREIGN KEY (carId) REFERENCES Car(id)
+);
+
+
+
+

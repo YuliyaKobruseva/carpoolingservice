@@ -1,22 +1,20 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:mydb
-    username: sa
-    password: password
+    url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
+    username: sa
+    password:
   jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: health,beans,loggers
-          # custom actuator base path: use root mapping `/` instead of default `/actuator/`
-        base-path: /carpooling
-        # override endpoint name for health check: `/health` => `/status`
-        path-mapping:
-          health=/ping/me: /status
-      security:
-        enabled: false
-
-
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+management:
+  endpoints:
+    web:
+      base-path: /carpooling
+      path-mapping:
+        health: status
+  security:
+    enabled: false
