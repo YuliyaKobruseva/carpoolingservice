@@ -16,8 +16,8 @@ This API was developed with the following technologies:
 
 ## Pre-requirements
 
-- Java 17.
-- Maven 3.6.3.
+- Java 17
+- Maven
 - Git
 - H2
 
